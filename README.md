@@ -1,38 +1,32 @@
-# RabbitMQ Publisher-Consumer Uygulaması
 
-Bu repo, basit bir RabbitMQ yayıncı-tüketici (publisher-consumer) uygulamasını içermektedir. Bu uygulama, RabbitMQ aracılığıyla bir kuyruk oluşturarak mesajları yayınlar ve ardından bu mesajları tüketir.
+RabbitMQ Publisher-Consumer Application
+This repository contains a simple RabbitMQ publisher-consumer application. This application creates a queue via RabbitMQ, publishes messages, and then consumes these messages.
 
-## Gereksinimler
-- .NET Core 3.1 veya daha yeni bir sürümü yüklü olmalıdır.
-- RabbitMQ brokerına erişim sağlanmalıdır. Bu örnekte CloudAMQP kullanılmaktadır.
+Requirements
+You must have .NET Core 3.1 or a newer version installed.
+Access to a RabbitMQ broker is required. In this example, CloudAMQP is used.
+Installation
+Clone this repository to your local machine:
 
-## Kurulum
+bash
+Copy code
+git clone <repository_url>
+Navigate to the PublisherApp and ConsumerApp folders respectively and follow these steps in each:
 
-1. Bu depoyu yerel makinenize klonlayın:
+Open the appsettings.json file. Replace the ConnectionUri field with the appropriate URI for accessing the RabbitMQ broker.
 
-   ```bash
-   git clone <repository_url>
-
-PublisherApp ve ConsumerApp klasörlerine sırasıyla gidin ve her birinde aşağıdaki adımları izleyin:
-
-appsettings.json dosyasını açın. ConnectionUri alanını, RabbitMQ brokerına erişim için uygun olan URI ile değiştirin.
-
-Terminali açın ve PublisherApp klasöründe aşağıdaki komutu çalıştırın:
+Open a terminal and run the following command in the PublisherApp folder:
 
 bash
 Copy code
 dotnet run
-Başka bir terminal penceresi açın ve ConsumerApp klasöründe aşağıdaki komutu çalıştırın:
+Open another terminal window and run the following command in the ConsumerApp folder:
 
 bash
 Copy code
 dotnet run
+Usage
+The PublisherApp application will create a queue named example-queue and then publish messages containing numbers from 0 to 99. The ConsumerApp application will consume messages from the example-queue queue and write them to the console.
 
-Kullanım
-PublisherApp uygulaması, example-queue adında bir kuyruk oluşturacak ve ardından 0'dan 99'a kadar olan sayıları içeren mesajları yayınlayacaktır.
-ConsumerApp uygulaması, example-queue kuyruğundan mesajları tüketerek konsola yazdıracaktır.
-
-
-Kaynakça
-Bu projeyi geliştiren kaynağa aşağıdaki videodan ulaşabilirsiniz:
-[Youtube Video](https://www.youtube.com/watch?v=xMwmB4kMBro)https://www.youtube.com/watch?v=xMwmB4kMBro
+References
+You can find the source that developed this project in the following video: Youtube Video https://www.youtube.com/watch?v=xMwmB4kMBro
